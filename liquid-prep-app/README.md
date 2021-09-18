@@ -1,4 +1,6 @@
-# [Liquid Prep - App](https://liquid-prep-appv1.s3-web.us-east.cloud-object-storage.appdomain.cloud/)
+# [Liquid Prep - App](https://liquid-prep-app-v2.s3-web.us-east.cloud-object-storage.appdomain.cloud/)
+
+[![Web App](https://img.shields.io/badge/WebApp-Liquid%20%20Prep-blue)](https://liquid-prep-app-v2.s3-web.us-east.cloud-object-storage.appdomain.cloud/)
 
 Liquid Prep App is an user interface that is accessed on your mobile device to get water advise for the selected crop. It is a [Progressive Web App (PWA)](https://web.dev/progressive-web-apps/) developed with [Angular](https://angular.io/) web framework.
 
@@ -6,7 +8,7 @@ The Liquid Prep App gets the Weather and Crops data from the [Liquid Prep Backen
 
 The Liquid Prep App can be run on your local machine for development and testing purpose. And it is deployed on [IBM Cloud Object Storage](https://www.ibm.com/ca-en/cloud/object-storage) for production to be accessed globally.
 
-**[Click to access Liquid Prep App](https://liquid-prep-appv1.s3-web.us-east.cloud-object-storage.appdomain.cloud/)**
+**[Click to access Liquid Prep App](https://liquid-prep-app-v2.s3-web.us-east.cloud-object-storage.appdomain.cloud/)**
 
 Instructions on how to run the App,
 1. [Locally](#run-app-locally) 
@@ -49,7 +51,7 @@ Instructions on how to run the App,
 # [Deploy App in IBM Cloud Object Storage](https://cloud.ibm.com/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage)
 
  1. **Config.json**
-    - Rename the file `src/config.json.sample` to `src/config.json`.
+    - Rename the file `src/config-sample.json` to `src/config.json`.
     - Update the `src/config.json` with Liquid Prep Backend Service Endpoint noted down in the [Pre-requisites](#pre-requisites) 6th point.
 
  2. **Build the App for production**
@@ -83,7 +85,7 @@ Instructions on how to run the App,
           <img src="https://github.com/Call-for-Code/Liquid-Prep/blob/master/images/App/COS/cosCreateBucket.PNG" width ="30%" height="30%">
       </p>
 
-    - Configure the bucket by entering a **Unique bucket name**, select the required **Resiliency**, **Locaton** and **Storage class** options. Then configure **Static website hosting** by clicking **Add rule**, turn on the **Public access** switch and enter `index.html` for **Index document**. Finally click **Create Bucket** button end of the page.
+    - Configure the bucket by entering a **Unique bucket name**, select the required **Resiliency**, **Location** and **Storage class** options. Then configure **Static website hosting** by clicking **Add rule**, turn on the **Public access** switch and enter `index.html` for **Index document**. Finally click **Create Bucket** button end of the page.
       <p align="left">
           <img src="https://github.com/Call-for-Code/Liquid-Prep/blob/master/images/App/COS/cosBucketConfig1.PNG" width ="30%" height="30%">
       </p>

@@ -1,6 +1,6 @@
 # Liquid Prep
 
-[![License](https://img.shields.io/badge/License-Apache2-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0) [![Community](https://img.shields.io/badge/Join-Community-blue.svg)](https://developer.ibm.com/callforcode/solutions/projects/get-started/)
+[![License](https://img.shields.io/badge/License-Apache2-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0) [![Slack](https://img.shields.io/static/v1?label=Community&message=%23liquid-prep&color=blue)](https://developer.ibm.com/callforcode/solutions/projects/get-started/) [![Web App](https://img.shields.io/badge/WebApp-Liquid%20%20Prep-blue)](https://liquid-prep-app-v2.s3-web.us-east.cloud-object-storage.appdomain.cloud/)
 
 Liquid Prep offers an end-to-end solution for farmers who want to optimize their water usage; especially during times of drought. It is specially designed for low-literate farmers in developing countries who also need access to advanced agricultural advice to be successful.
 
@@ -24,11 +24,11 @@ We have developed **Liquid Prep**, an end-to-end solution for farmers looking to
 
 #### Soil Moisture Sensor Module
 
-The Soil Moisture Sendor Module, measures the soil moisture level and transmits the data to Liquid Prep App via USB serial connection/Bluetooth.
+The Soil Moisture Sensor Module, measures the soil moisture level and transmits the data to Liquid Prep App via USB serial connection/Bluetooth.
 
 #### Liquid Prep App
 
-Liquid Prep App is designed and developed for users/famers with low literacy to easily understand, interact and get water advice for selected crop in their current location. The App interacts with the Soil Moisture Sensor Module to get the soil moisture data and IBM Cloud Backend Service to fetch weather data and crop data to generate watering advice for the selected crop.
+Liquid Prep App is designed and developed for users/farmers with low literacy to easily understand, interact and get water advice for selected crop in their current location. The App interacts with the Soil Moisture Sensor Module to get the soil moisture data and IBM Cloud Backend Service to fetch weather data and crop data to generate watering advice for the selected crop.
 
 #### IBM Cloud Backend Service
 
@@ -41,9 +41,9 @@ The Weather Data for a given location is being requested to [The Weather Company
 ### Get Started
 
 1. Project Setup
-   - [Soil Moisture Sensor Module Setup](https://github.com/Call-for-Code/Liquid-Prep/blob/master/soilSensor/User-Manual.pdf)
-   - [IBM Cloud Backend Service Setup](https://github.com/Call-for-Code/Liquid-Prep/blob/master/backend/README.md)
-   - [Liquid Prep App Setup](https://github.com/Call-for-Code/Liquid-Prep/blob/master/liquid-prep-app/README.md)
+   - [Soil Moisture Sensor Device Setup](./soilSensor/README.md)
+   - [IBM Cloud Backend Service Setup](./backend/README.md)
+   - [Liquid Prep App Setup](./liquid-prep-app/README.md)
 2. [Project Roadmap](#project-roadmap)
 3. [Contributing](#contributing)
 

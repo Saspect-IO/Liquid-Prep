@@ -35,7 +35,7 @@ export class SeedDateComponent implements OnInit {
           this.stages = cropData.cropGrowthStage.stages;
         },
         (err) => {
-          alert("Could not get crop info: " + err);
+          alert('Could not get crop info: ' + err);
         }
     );
   }
@@ -49,18 +49,18 @@ export class SeedDateComponent implements OnInit {
   }
 
   clickConfirm(userSelectedDate: Date) {
-    
-    let todayDate = new DateTimeUtil().getTodayDate();
-    let numberOfDaysFromSeedingDate = Math.floor((Math.abs(todayDate.getTime() - userSelectedDate.getTime()))/ (1000 * 3600 * 24));
-    
+
+    const todayDate = new DateTimeUtil().getTodayDate();
+    const numberOfDaysFromSeedingDate = Math.floor((Math.abs(todayDate.getTime() - userSelectedDate.getTime())) / (1000 * 3600 * 24));
+
     // identify the current crop growth stage based on the number days of seeding date
     const stage: Stage = this.identifyGrowthStage(numberOfDaysFromSeedingDate);
 
     // add crop info to my crops list
+    this.crop.seedingDate = userSelectedDate;
     this.cropService.storeMyCropsInLocalStorage(this.crop);
-    // store selected crop in session to generate water advise
-     const selectedCrop = this.cropService.createSelectedCrop(this.crop, stage);
-     this.cropService.storeSelectedCropInSession(selectedCrop);
+    // store selected crop id in session to generate water advise
+    this.cropService.storeSelectedCropIdInSession(this.crop.id);
 
     this.router.navigate(['/measure-soil']).then(r => {});
   }
@@ -70,12 +70,12 @@ export class SeedDateComponent implements OnInit {
   // @return The current crop growth stage
   private identifyGrowthStage(numberOfDaysFromSeedingDate) {
     let stage: Stage;
-    let cummulativeStagesLength: number[] = [this.stages[0].stageLength];
-    for(let i=1; i < this.stages.length; i++){
-      cummulativeStagesLength[i] = cummulativeStagesLength[i-1] + this.stages[i].stageLength
+    const cummulativeStagesLength: number[] = [this.stages[0].stageLength];
+    for (let i = 1; i < this.stages.length; i++){
+      cummulativeStagesLength[i] = cummulativeStagesLength[i - 1] + this.stages[i].stageLength;
     }
-    for(let i=0; i < this.stages.length; i++){
-      if(numberOfDaysFromSeedingDate <= cummulativeStagesLength[i]){
+    for (let i = 0; i < this.stages.length; i++){
+      if (numberOfDaysFromSeedingDate <= cummulativeStagesLength[i]){
         stage = this.stages[i];
         break;
       } else {
